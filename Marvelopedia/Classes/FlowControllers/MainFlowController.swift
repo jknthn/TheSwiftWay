@@ -15,8 +15,7 @@ class MainFlowController: FlowController {
     
     init() {
         rootNavigation = UINavigationController()
-        rootController = UIViewController()
-        rootController.view.backgroundColor = #colorLiteral(red: 0.08369787037, green: 0.212726444, blue: 0.3254130781, alpha: 1)
+        rootController = MenuViewController()
         rootNavigation.addChildViewController(rootController)
     }
 }
