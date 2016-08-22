@@ -32,13 +32,29 @@ extension MarvelCharacter {
         return Resource(url: url.authorized(), parse: parseCharacter)
     }
     
-    private func parseCharacter(data: Data) -> MarvelCharacter? {
-        return parseCharacterData(from: unwrapCharacterData(from: data)) ?? nil
+    static var all: Resource<[MarvelCharacter]> {
+        let url = MarvelURL(urlString: "http://gateway.marvel.com:80/v1/public/characters")
+        return Resource(url: url.authorized(), parse: parseCharacters)
     }
     
-    private func parseCharacterData(from dict: JSONDictionary?) -> MarvelCharacter? {
+    private func parseCharacter(dict: JSONDictionary) -> MarvelCharacter? {
+        return MarvelCharacter.parsedCharacterData(from: MarvelCharacter.unwrapCharactersData(from: dict)?.first) ?? nil
+    }
+    
+    private static func parseCharacters(dict: JSONDictionary) -> [MarvelCharacter]? {
+        var array = [MarvelCharacter]()
+        unwrapCharactersData(from: dict)?.forEach { json in
+            if let char = parsedCharacterData(from: json) {
+                array.append(char)
+            }
+        }
+        return array.count > 0 ? array : nil
+     }
+    
+    private static func parsedCharacterData(from dict: JSONDictionary?) -> MarvelCharacter? {
         guard
             let dict = dict,
+            let id = dict["id"] as? Int,
             let name = dict["name"] as? String,
             let description = dict["description"] as? String,
             let thumbnail = dict["thumbnail"] as? JSONDictionary,
@@ -52,16 +68,14 @@ extension MarvelCharacter {
         return MarvelCharacter(id: id, name: name, description: description, thumbnailURL: thumbnailURL)
     }
     
-    private func unwrapCharacterData(from data: Data) -> JSONDictionary? {
+    private static func unwrapCharactersData(from dict: JSONDictionary) -> [JSONDictionary]? {
         guard
-            let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) as? JSONDictionary,
-            let data = json?["data"] as? JSONDictionary ,
-            let results = data["results"] as? [JSONDictionary],
-            let characterData = results.first
+            let data = dict["data"] as? JSONDictionary ,
+            let results = dict["results"] as? [JSONDictionary]
         else {
             fatalError("Parsing error. It is on programmer.")
             return nil
         }
-        return characterData
+        return results
     }
 }

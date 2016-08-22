@@ -10,4 +10,13 @@ import Foundation
 
 enum APIError: Int, Error {
     case notFound = 404
+    case unknown
+    
+    static func fromError(error: NSError) -> APIError {
+        if let apiError = APIError(rawValue: error.code) {
+            return apiError
+        } else {
+            return APIError.unknown
+        }
+    }
 }
