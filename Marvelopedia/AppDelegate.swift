@@ -23,6 +23,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func setupWindow() {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
-        window?.rootViewController = mainFlowController.rootController
+        window?.rootViewController = mainFlowController.rootNavigation
     }
 }

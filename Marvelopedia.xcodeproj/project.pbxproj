@@ -21,6 +21,9 @@
 		76A967531D5B156800ADE2B8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76A967511D5B156800ADE2B8 /* LaunchScreen.storyboard */; };
 		76A9675F1D5B28A500ADE2B8 /* FlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A9675E1D5B28A500ADE2B8 /* FlowController.swift */; };
 		76A967611D5B29B600ADE2B8 /* MainFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A967601D5B29B600ADE2B8 /* MainFlowController.swift */; };
+		76FC24701D6C49BC0024C35F /* UIView+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FC246F1D6C49BC0024C35F /* UIView+Constraints.swift */; };
+		76FC24721D6C4CA20024C35F /* String+MD5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FC24711D6C4CA20024C35F /* String+MD5.swift */; };
+		76FC24751D6C549A0024C35F /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FC24741D6C549A0024C35F /* MenuViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +44,9 @@
 		76A967541D5B156800ADE2B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
 		76A9675E1D5B28A500ADE2B8 /* FlowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowController.swift; sourceTree = "<group>"; };
 		76A967601D5B29B600ADE2B8 /* MainFlowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainFlowController.swift; sourceTree = "<group>"; };
+		76FC246F1D6C49BC0024C35F /* UIView+Constraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Constraints.swift"; sourceTree = "<group>"; };
+		76FC24711D6C4CA20024C35F /* String+MD5.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+MD5.swift"; sourceTree = "<group>"; };
+		76FC24741D6C549A0024C35F /* MenuViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,10 +131,12 @@
 			children = (
 				76A967481D5B156800ADE2B8 /* AppDelegate.swift */,
 				765EB2171D6AF2D200DB6528 /* BridgingHeader.h */,
+				76FC246E1D6C49630024C35F /* Extensions */,
 				765EB2071D6AD53200DB6528 /* Model */,
 				76A9675D1D5B289600ADE2B8 /* FlowControllers */,
 				765EB20C1D6ADA7F00DB6528 /* Webservice */,
 				765C29731D6465380035CDE5 /* ViewControllers */,
+				76FC24731D6C548D0024C35F /* ViewModels */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -140,6 +148,23 @@
 				76A967601D5B29B600ADE2B8 /* MainFlowController.swift */,
 			);
 			path = FlowControllers;
+			sourceTree = "<group>";
+		};
+		76FC246E1D6C49630024C35F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				76FC246F1D6C49BC0024C35F /* UIView+Constraints.swift */,
+				76FC24711D6C4CA20024C35F /* String+MD5.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		76FC24731D6C548D0024C35F /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				76FC24741D6C549A0024C35F /* MenuViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -217,11 +242,14 @@
 				765EB20E1D6ADA8B00DB6528 /* Result.swift in Sources */,
 				765EB2191D6C24BF00DB6528 /* MarvelEvent.swift in Sources */,
 				765EB2121D6ADBF200DB6528 /* Resource.swift in Sources */,
+				76FC24751D6C549A0024C35F /* MenuViewModel.swift in Sources */,
+				76FC24701D6C49BC0024C35F /* UIView+Constraints.swift in Sources */,
 				76A967611D5B29B600ADE2B8 /* MainFlowController.swift in Sources */,
 				76A967491D5B156800ADE2B8 /* AppDelegate.swift in Sources */,
 				765EB2091D6AD54300DB6528 /* MarvelCharacter.swift in Sources */,
 				76A9675F1D5B28A500ADE2B8 /* FlowController.swift in Sources */,
 				765C29751D6465780035CDE5 /* MenuViewController.swift in Sources */,
+				76FC24721D6C4CA20024C35F /* String+MD5.swift in Sources */,
 				765EB2101D6ADAE700DB6528 /* APIError.swift in Sources */,
 				765EB2141D6ADC3200DB6528 /* Webservice.swift in Sources */,
 				765EB21B1D6C28BC00DB6528 /* MarvelDict.swift in Sources */,

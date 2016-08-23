@@ -15,7 +15,27 @@ class MainFlowController: FlowController {
     
     init() {
         rootNavigation = UINavigationController()
-        rootController = MenuViewController()
+        
+        let menuViewModel = MenuViewModel(menuOptions: [.heroes, .events])
+        rootController = MenuViewController(menuViewModel:
+            menuViewModel
+        )
+        menuViewModel.delegate = self
         rootNavigation.addChildViewController(rootController)
+    }
+}
+
+extension MainFlowController: MenuViewModelDelegate {
+    
+    func menuViewModel(menuViewModel: MenuViewModel, didSelectOption option: MenuOption) {
+        let vc = UIViewController()
+        vc.title = option.rawValue.uppercased()
+        vc.view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        switch option {
+        case .heroes:
+            rootNavigation.pushViewController(vc, animated: true)
+        case .events:
+            rootNavigation.pushViewController(vc, animated: true)
+        }
     }
 }
