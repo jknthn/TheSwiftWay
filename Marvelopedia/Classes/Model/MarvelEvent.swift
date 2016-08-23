@@ -22,6 +22,17 @@ struct MarvelEvent {
     }
 }
 
+extension MarvelEvent: CellDisplayable {
+    
+    var mainTitle: String {
+        return title ?? ""
+    }
+    
+    var subtitle: String {
+        return description ?? ""
+    }
+}
+
 extension MarvelEvent {
     
     static var all: Resource<[MarvelEvent]> {

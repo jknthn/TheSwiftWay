@@ -24,6 +24,7 @@
 		76FC24701D6C49BC0024C35F /* UIView+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FC246F1D6C49BC0024C35F /* UIView+Constraints.swift */; };
 		76FC24721D6C4CA20024C35F /* String+MD5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FC24711D6C4CA20024C35F /* String+MD5.swift */; };
 		76FC24751D6C549A0024C35F /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FC24741D6C549A0024C35F /* MenuViewModel.swift */; };
+		76FC24791D6C719D0024C35F /* HeroesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FC24781D6C719D0024C35F /* HeroesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		76FC246F1D6C49BC0024C35F /* UIView+Constraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Constraints.swift"; sourceTree = "<group>"; };
 		76FC24711D6C4CA20024C35F /* String+MD5.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+MD5.swift"; sourceTree = "<group>"; };
 		76FC24741D6C549A0024C35F /* MenuViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
+		76FC24781D6C719D0024C35F /* HeroesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 			isa = PBXGroup;
 			children = (
 				765C29741D6465780035CDE5 /* MenuViewController.swift */,
+				76FC24781D6C719D0024C35F /* HeroesViewController.swift */,
 			);
 			name = ViewControllers;
 			path = Marvelopedia/Classes/ViewControllers;
@@ -249,6 +252,7 @@
 				765EB2091D6AD54300DB6528 /* MarvelCharacter.swift in Sources */,
 				76A9675F1D5B28A500ADE2B8 /* FlowController.swift in Sources */,
 				765C29751D6465780035CDE5 /* MenuViewController.swift in Sources */,
+				76FC24791D6C719D0024C35F /* HeroesViewController.swift in Sources */,
 				76FC24721D6C4CA20024C35F /* String+MD5.swift in Sources */,
 				765EB2101D6ADAE700DB6528 /* APIError.swift in Sources */,
 				765EB2141D6ADC3200DB6528 /* Webservice.swift in Sources */,

@@ -8,6 +8,11 @@
 
 import UIKit
 
+protocol CellDisplayable {
+    var mainTitle: String { get }
+    var subtitle: String { get }
+}
+
 struct MarvelCharacter {
     
     let id: Int
@@ -20,6 +25,17 @@ struct MarvelCharacter {
         self.name = name
         self.description = description
         self.thumbnailURL = thumbnailURL
+    }
+}
+
+extension MarvelCharacter: CellDisplayable {
+    
+    var mainTitle: String {
+        return name ?? ""
+    }
+    
+    var subtitle: String {
+        return description ?? ""
     }
 }
 

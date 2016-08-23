@@ -28,7 +28,7 @@ class MainFlowController: FlowController {
 extension MainFlowController: MenuViewModelDelegate {
     
     func menuViewModel(menuViewModel: MenuViewModel, didSelectOption option: MenuOption) {
-        let vc = UIViewController()
+        let vc = HeroesViewController()
         vc.title = option.rawValue.uppercased()
         vc.view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         switch option {
