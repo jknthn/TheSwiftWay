@@ -29,7 +29,7 @@ class Webservice {
     }
     
     private func checkDictForError(_ dict: JSONDictionary) -> Error? {
-        guard let errorCode = dict["code"] as? Int else {
+        guard let errorCode = dict["code"] as? Int, errorCode != 200 else {
             return nil
         }
         return APIError(rawValue: errorCode) ?? .unknown

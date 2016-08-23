@@ -21,7 +21,7 @@ struct MarvelDict {
     func unwrapped() -> [JSONDictionary]? {
         guard
             let data = dict["data"] as? JSONDictionary,
-            let results = dict["results"] as? [JSONDictionary]
+            let results = data["results"] as? [JSONDictionary]
         else {
             fatalError("Parsing error. It is on programmer.")
             return nil

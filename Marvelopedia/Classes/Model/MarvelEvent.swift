@@ -26,7 +26,6 @@ extension MarvelEvent {
     
     static var all: Resource<[MarvelEvent]> {
         let url = MarvelURL(urlString: "http://gateway.marvel.com:80/v1/public/events")
-        print(url.authorized())
         return Resource(url: url.authorized(), parse: parseEvents)
     }
     

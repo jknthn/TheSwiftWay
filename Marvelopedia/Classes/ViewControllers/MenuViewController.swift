@@ -12,9 +12,5 @@ class MenuViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        Webservice().get(resource: MarvelEvent.all, completion: { event in
-            
-        })
     }
 }
