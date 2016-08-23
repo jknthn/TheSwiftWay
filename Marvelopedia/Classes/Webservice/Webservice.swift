@@ -11,12 +11,7 @@ import Foundation
 class Webservice {
     
     func get<T>(resource: Resource<T>, completion: @escaping (Result<T>) -> Void) {
-        let task = URLSession.shared.dataTask(with: resource.url) { data, _, error in
-            
-            if let error = error {
-                completion(.failure(APIError.fromError(error: error as NSError)))
-            }
-            
+        let task = URLSession.shared.dataTask(with: resource.url) { data, _, _ in
             guard
                 let data = data,
                 let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments),
@@ -25,7 +20,6 @@ class Webservice {
                 fatalError("Something is wrong.")
                 return
             }
-            
             if let error = self.checkDictForError(jsonDict) {
                 return completion(.failure(error))
             }

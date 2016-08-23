@@ -12,14 +12,9 @@ class MenuViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        Webservice().get(resource: MarvelCharacter(id: 1009368).single, completion: { rsr in
-//            print(rsr)
-//        })
-        Webservice().get(resource: MarvelCharacter(id: 1).single, completion: { rsr in
-            print(rsr)
+        
+        Webservice().get(resource: MarvelEvent.all, completion: { event in
+            
         })
-//        Webservice().get(resource: MarvelCharacter.all, completion: { rsr in
-//            
-//        })
     }
 }

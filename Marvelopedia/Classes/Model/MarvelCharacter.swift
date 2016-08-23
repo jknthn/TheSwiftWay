@@ -8,8 +8,6 @@
 
 import UIKit
 
-typealias JSONDictionary = [String: AnyObject]
-
 struct MarvelCharacter {
     
     let id: Int
@@ -38,12 +36,12 @@ extension MarvelCharacter {
     }
     
     private func parseCharacter(dict: JSONDictionary) -> MarvelCharacter? {
-        return MarvelCharacter.parsedCharacterData(from: MarvelCharacter.unwrapCharactersData(from: dict)?.first) ?? nil
+        return MarvelCharacter.parsedCharacterData(from: MarvelDict(dict).unwrapped()?.first) ?? nil
     }
     
     private static func parseCharacters(dict: JSONDictionary) -> [MarvelCharacter]? {
         var array = [MarvelCharacter]()
-        unwrapCharactersData(from: dict)?.forEach { json in
+        MarvelDict(dict).unwrapped()?.forEach { json in
             if let char = parsedCharacterData(from: json) {
                 array.append(char)
             }
@@ -61,21 +59,10 @@ extension MarvelCharacter {
             let thumbnailString = thumbnail["path"] as? String,
             let thumbnailURL = URL(string: thumbnailString)
         else {
-                fatalError("Parsing error. It is on programmer.")
-                return nil
-        }
-        
-        return MarvelCharacter(id: id, name: name, description: description, thumbnailURL: thumbnailURL)
-    }
-    
-    private static func unwrapCharactersData(from dict: JSONDictionary) -> [JSONDictionary]? {
-        guard
-            let data = dict["data"] as? JSONDictionary ,
-            let results = dict["results"] as? [JSONDictionary]
-        else {
             fatalError("Parsing error. It is on programmer.")
             return nil
         }
-        return results
+        
+        return MarvelCharacter(id: id, name: name, description: description, thumbnailURL: thumbnailURL)
     }
 }
