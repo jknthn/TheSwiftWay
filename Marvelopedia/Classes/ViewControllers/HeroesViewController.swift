@@ -96,7 +96,7 @@ class NetworkDataSource<T: CellDisplayable>: NSObject, UITableViewDataSource {
                 self.activityIndicatorView.removeFromSuperview()
             }
             self.tableView.reloadData()
-        }
+        }        
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
